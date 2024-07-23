@@ -1,3 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+
+:root {
+  --base-light: hsl(0, 0%, 100%);
+  --base-dark: hsl(0, 0%, 0%);
+}
+
+.text-dark {
+  color: var(--base-dark);
+  text-shadow: 8px 6px 7px white, -6px -6px 9px white;
+}
+
+.text-light {
+  color: var(--base-light);
+  text-shadow: 8px 6px 7px black, -6px -6px 9px black;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -11,7 +29,11 @@ body {
 }
 
 main {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Luckiest Guy";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+
   width: inherit;
   height: inherit;
 }
@@ -54,10 +76,33 @@ main {
   transition: 0.5s;
   cursor: pointer;
   box-shadow: inset 1px 1px 30px hsl(194, 64%, 72%);
+  transition: 0.5s cubic-bezier(0.34, -0.36, 0.19, -0.32);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+}
+
+.showcase.open-active span:not(.name) {
+  transition: 0.5s;
+  transform: translateY(0%)
+}
+
+.showcase span {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+
+  /* transform: translateY(1000%) */
+}
+
+.showcase span:not(.name) {
+  transition: 0.5s;
+  transform: translateY(500%);
 }
 
 .showcase.open {
-  flex: 3 1;
-  transition: 0.5s;
-  ;
+  flex: 3;
+  transition: 0.5s cubic-bezier(0.34, -0.36, 0.19, -0.32);
 }

@@ -1,9 +1,18 @@
-const gallery = document.querySelectorAll(".showcase");
+const showcases = document.querySelectorAll(".showcase");
 
-function onClick(e) {
-    e.target.classList.toggle("open")
+function toggleOpen() {
+  console.log("Hello");
+  this.classList.toggle("open");
 }
 
-gallery.forEach((showcase) => {
-  showcase.addEventListener("click", onClick);
-});
+function toggleActive(e) {
+  console.log(e.propertyName);
+  if (e.propertyName.includes("flex")) {
+    this.classList.toggle("open-active");
+  }
+}
+
+showcases.forEach((showcase) => showcase.addEventListener("click", toggleOpen));
+showcases.forEach((showcase) =>
+  showcase.addEventListener("transitionend", toggleActive)
+);
